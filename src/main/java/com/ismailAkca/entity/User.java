@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class User extends BaseEntity{
     @Id
-    @SequenceGenerator(name="user_seq_gen",sequenceName = "user_gen",initialValue = 1,allocationSize = 3)
+    @SequenceGenerator(name="user_seq_gen",sequenceName = "user_gen",initialValue = 100,allocationSize = 3)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="user_seq_gen")
     @Column(name = "ID",unique = true)
     private Long id;

@@ -1,13 +1,27 @@
 package com.ismailAkca.service;
 
+import com.ismailAkca.dto.UserDto;
 import com.ismailAkca.entity.User;
+import com.ismailAkca.util.CustomPage;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UserService {
-    User createUser(User user);
-    List<User> getUsers();
+    UserDto createUser(UserDto user);
+    List<UserDto> getUsers();
 
-    User getUser(Long id);
+    UserDto getUser(Long id);
+
+    UserDto updateUserById(UserDto user, Long id);
+
+    Page<User> pagenationUser(int currentPage, int pageSize);
+
+    Page<User> pagenationUserV1(Pageable pageable);
+
+    Page<User> slice(Pageable pageable);
+
+    CustomPage<UserDto> customPage(Pageable page);
+
 }
